@@ -43,7 +43,7 @@ export const MenuItem = styled.div`
   transition: 0.2s;
   border-radius: 8px;
   &:hover {
-    scale: 1.01;
+    scale: 1.02;
     background-color: #f2f3f5;
   }
 `;
@@ -68,10 +68,10 @@ export const LogoBox2 = styled.div`
   cursor: pointer;
   img {
     height: 24px;
-  }
-  &:hover {
-    scale: 1.01;
-    background-color: #f2f3f5;
+    &:hover {
+      scale: 2;
+      background-color: #f2f3f5;
+    }
   }
 `;
 
@@ -88,7 +88,7 @@ export const MenuItem2 = styled.div`
   transition: 0.2s;
   border-radius: 8px;
   &:hover {
-    scale: 1.01;
+    scale: 1.02;
     background-color: #f2f3f5;
   }
 `;
