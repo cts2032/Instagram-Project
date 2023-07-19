@@ -7,16 +7,21 @@ import {
   NavMenuContainer,
 } from "../Navigation_Bar_Sty";
 
-import Home from "../../images/free-icon-home-5948524.png";
-import Logo from "../../images/instagram_logo.png";
-import Reels from "../../images/free-icon-video-5948543.png";
-import Message from "../../images/free-icon-direct-instagram-5883507.png";
-import Like from "../../images/free-icon-like-535285.png";
-import Plus from "../../images/free-icon-plus-5948495.png";
-import User from "../../images/44884218_345707102882519_2446069589734326272_n.jpg";
-import Search from "../../images/free-icon-search-5948534.png";
-
-const D_NavBar = () => {
+const D_NavBar = ({
+  Logo,
+  User,
+  Search,
+  HomeImg,
+  ReelsImg,
+  LikeImg,
+  PlusImg,
+  MessageImg,
+  HomeClick,
+  LikeClick,
+  ReelsClick,
+  PlusClick,
+  MessageClick,
+}) => {
   return (
     <NavBarContainer>
       <NavMenuContainer>
@@ -24,8 +29,8 @@ const D_NavBar = () => {
           <img src={Logo} alt="로고" />
         </LogoBox>
         <MenuBox>
-          <MenuItem>
-            <img src={Home} alt="홈" />
+          <MenuItem onClick={HomeClick}>
+            <img src={HomeImg} alt="홈" />
             <div>
               <span
                 style={{
@@ -68,8 +73,8 @@ const D_NavBar = () => {
               </span>
             </div>
           </MenuItem>
-          <MenuItem>
-            <img src={Reels} alt="릴스" />
+          <MenuItem onClick={ReelsClick}>
+            <img src={ReelsImg} alt="릴스" />
             <div>
               <span
                 style={{
@@ -82,8 +87,8 @@ const D_NavBar = () => {
               </span>
             </div>
           </MenuItem>
-          <MenuItem>
-            <img src={Message} alt="메세지" />
+          <MenuItem onClick={MessageClick}>
+            <img src={MessageImg} alt="메세지" />
             <div>
               <span
                 style={{
@@ -96,8 +101,8 @@ const D_NavBar = () => {
               </span>
             </div>
           </MenuItem>
-          <MenuItem>
-            <img src={Like} alt="알림" />
+          <MenuItem onClick={LikeClick}>
+            <img src={LikeImg} alt="알림" />
             <div>
               <span
                 style={{
@@ -110,8 +115,8 @@ const D_NavBar = () => {
               </span>
             </div>
           </MenuItem>
-          <MenuItem>
-            <img src={Plus} alt="만들기" />
+          <MenuItem onClick={PlusClick}>
+            <img src={PlusImg} alt="만들기" />
             <div>
               <span
                 style={{

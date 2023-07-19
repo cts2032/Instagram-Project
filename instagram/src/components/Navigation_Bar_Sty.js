@@ -11,7 +11,6 @@ export const NavBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.5s ease;
 `;
 
 export const LogoBox = styled.div`
@@ -19,11 +18,13 @@ export const LogoBox = styled.div`
   width: 196px;
   height: 36px;
   margin-bottom: 19px;
+
   cursor: pointer;
   img {
     width: 120px;
     position: relative;
     bottom: 10px;
+    transition: all 1s ease;
   }
 `;
 
@@ -59,7 +60,6 @@ export const NavBarContainer2 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.5s ease;
 `;
 
 export const LogoBox2 = styled.div`
@@ -104,7 +104,6 @@ export const NavBarContainer3 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.5s ease;
 `;
 
 export const LogoBox3 = styled.div`

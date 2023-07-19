@@ -6,15 +6,23 @@ import {
   NavBarContainer2,
   NavMenuContainer2,
 } from "../Navigation_Bar_Sty";
-import Home from "../../images/free-icon-home-5948524.png";
+
 import SmallLogo from "../../images/free-icon-instagram-717392.png";
-import Reels from "../../images/free-icon-video-5948543.png";
-import Message from "../../images/free-icon-direct-instagram-5883507.png";
-import Like from "../../images/free-icon-like-535285.png";
-import Plus from "../../images/free-icon-plus-5948495.png";
-import User from "../../images/44884218_345707102882519_2446069589734326272_n.jpg";
-import Search from "../../images/free-icon-search-5948534.png";
-const S_NavBar = () => {
+
+const S_NavBar = ({
+  User,
+  Search,
+  HomeImg,
+  ReelsImg,
+  LikeImg,
+  PlusImg,
+  MessageImg,
+  HomeClick,
+  LikeClick,
+  ReelsClick,
+  PlusClick,
+  MessageClick,
+}) => {
   return (
     <NavBarContainer2>
       <NavMenuContainer2>
@@ -24,8 +32,8 @@ const S_NavBar = () => {
               <img src={SmallLogo} alt="로고" />
             </MenuItem2>
           </div>
-          <MenuItem2>
-            <img src={Home} alt="홈" />
+          <MenuItem2 onClick={HomeClick}>
+            <img src={HomeImg} alt="홈" />
           </MenuItem2>
           <MenuItem2>
             <img src={Search} alt="검색" />
@@ -35,17 +43,17 @@ const S_NavBar = () => {
               explore
             </span>
           </MenuItem2>
-          <MenuItem2>
-            <img src={Reels} alt="릴스" />
+          <MenuItem2 onClick={ReelsClick}>
+            <img src={ReelsImg} alt="릴스" />
           </MenuItem2>
-          <MenuItem2>
-            <img src={Message} alt="메세지" />
+          <MenuItem2 onClick={MessageClick}>
+            <img src={MessageImg} alt="메세지" />
           </MenuItem2>
-          <MenuItem2>
-            <img src={Like} alt="알림" />
+          <MenuItem2 onClick={LikeClick}>
+            <img src={LikeImg} alt="알림" />
           </MenuItem2>
-          <MenuItem2>
-            <img src={Plus} alt="만들기" />
+          <MenuItem2 onClick={PlusClick}>
+            <img src={PlusImg} alt="만들기" />
           </MenuItem2>
           <MenuItem>
             <img src={User} alt="프로필" />
