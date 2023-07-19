@@ -44,10 +44,12 @@ const D_NavBar = ({
           <img src={Logo} alt="로고" />
         </LogoBox>
         <MenuBox>
-          <MenuItem onClick={HomeClick}>
+          <MenuItem
+            onMouseDown={handleHomeDown}
+            onMouseUp={handleHomeUp}
+            onClick={HomeClick}
+          >
             <img
-              onMouseDown={handleHomeDown}
-              onMouseUp={handleHomeUp}
               style={{
                 transform: HomeScale ? "scale(0.8)" : "scale(1)",
                 transition: "transform 0.2s ease",
@@ -97,10 +99,12 @@ const D_NavBar = ({
               </span>
             </div>
           </MenuItem>
-          <MenuItem onClick={ReelsClick}>
+          <MenuItem
+            onMouseDown={handleReelsDown}
+            onMouseUp={handleReelsUp}
+            onClick={ReelsClick}
+          >
             <img
-              onMouseDown={handleReelsDown}
-              onMouseUp={handleReelsUp}
               style={{
                 transform: ReelsScale ? "scale(0.8)" : "scale(1)",
                 transition: "transform 0.2s ease",
@@ -120,10 +124,12 @@ const D_NavBar = ({
               </span>
             </div>
           </MenuItem>
-          <MenuItem onClick={MessageClick}>
+          <MenuItem
+            onMouseDown={handleMessageDown}
+            onMouseUp={handleMessageUp}
+            onClick={MessageClick}
+          >
             <img
-              onMouseDown={handleMessageDown}
-              onMouseUp={handleMessageUp}
               style={{
                 transform: MessageScale ? "scale(0.8)" : "scale(1)",
                 transition: "transform 0.2s ease",
@@ -143,10 +149,12 @@ const D_NavBar = ({
               </span>
             </div>
           </MenuItem>
-          <MenuItem onClick={LikeClick}>
+          <MenuItem
+            onMouseDown={handleLikeDown}
+            onMouseUp={handleLikeUp}
+            onClick={LikeClick}
+          >
             <img
-              onMouseDown={handleLikeDown}
-              onMouseUp={handleLikeUp}
               style={{
                 transform: LikeScale ? "scale(0.8)" : "scale(1)",
                 transition: "transform 0.2s ease",
@@ -166,10 +174,12 @@ const D_NavBar = ({
               </span>
             </div>
           </MenuItem>
-          <MenuItem onClick={PlusClick}>
+          <MenuItem
+            onMouseDown={handlePlusDown}
+            onMouseUp={handlePlusUp}
+            onClick={PlusClick}
+          >
             <img
-              onMouseDown={handlePlusDown}
-              onMouseUp={handlePlusUp}
               style={{
                 transform: PlusScale ? "scale(0.8)" : "scale(1)",
                 transition: "transform 0.2s ease",
