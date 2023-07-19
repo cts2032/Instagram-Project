@@ -40,11 +40,13 @@ export const MenuItem = styled.div`
   display: flex;
   margin: 4px 0px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 1s;
   border-radius: 8px;
   &:hover {
-    scale: 1.02;
     background-color: #f2f3f5;
+    img {
+      scale: 1.1;
+    }
   }
 `;
 
@@ -69,7 +71,7 @@ export const LogoBox2 = styled.div`
   img {
     height: 24px;
     &:hover {
-      scale: 2;
+      scale: 1.01;
       background-color: #f2f3f5;
     }
   }
@@ -88,8 +90,10 @@ export const MenuItem2 = styled.div`
   transition: 0.2s;
   border-radius: 8px;
   &:hover {
-    scale: 1.02;
     background-color: #f2f3f5;
+    img {
+      scale: 1.1;
+    }
   }
 `;
 
@@ -131,7 +135,10 @@ export const MenuItem3 = styled.span`
   border-radius: 8px;
 
   &:hover {
-    scale: 1.05;
+    background-color: #f2f3f5;
+    img {
+      scale: 1.1;
+    }
   }
 `;
 export const MenuBox2 = styled.div`
