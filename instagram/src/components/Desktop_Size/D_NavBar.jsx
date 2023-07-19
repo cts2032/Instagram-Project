@@ -16,11 +16,15 @@ const D_NavBar = ({
   LikeImg,
   PlusImg,
   MessageImg,
+  ExploreImg,
   HomeClick,
   LikeClick,
   ReelsClick,
   PlusClick,
   MessageClick,
+  ExploreClick,
+  SearchClick,
+  UserClick,
   HomeScale,
   handleHomeDown,
   handleHomeUp,
@@ -36,6 +40,18 @@ const D_NavBar = ({
   ReelsScale,
   handleReelsDown,
   handleReelsUp,
+  ExploreScale,
+  handleExploreDown,
+  handleExploreUp,
+  UserScale,
+  handleUserDown,
+  handleUserUp,
+  MoreScale,
+  handleMoreDown,
+  handleMoreUp,
+  SearchScale,
+  handleSearchDown,
+  handleSearchUp,
 }) => {
   return (
     <NavBarContainer>
@@ -69,8 +85,19 @@ const D_NavBar = ({
               </span>
             </div>
           </MenuItem>
-          <MenuItem>
-            <img src={Search} alt="검색" />
+          <MenuItem
+            onClick={SearchClick}
+            onMouseDown={handleSearchDown}
+            onMouseUp={handleSearchUp}
+          >
+            <img
+              style={{
+                transform: SearchScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={Search}
+              alt="검색"
+            />
             <div>
               <span
                 style={{
@@ -83,10 +110,19 @@ const D_NavBar = ({
               </span>
             </div>
           </MenuItem>
-          <MenuItem>
-            <span style={{ scale: "1.05" }} class="material-symbols-outlined">
-              explore
-            </span>
+          <MenuItem
+            onMouseDown={handleExploreDown}
+            onMouseUp={handleExploreUp}
+            onClick={ExploreClick}
+          >
+            <img
+              style={{
+                transform: ExploreScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={ExploreImg}
+              alt="홈"
+            />
             <div>
               <span
                 style={{
@@ -199,8 +235,19 @@ const D_NavBar = ({
               </span>
             </div>
           </MenuItem>
-          <MenuItem>
-            <img src={User} alt="프로필" />
+          <MenuItem
+            onClick={UserClick}
+            onMouseDown={handleUserDown}
+            onMouseUp={handleUserUp}
+          >
+            <img
+              style={{
+                transform: UserScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={User}
+              alt="프로필"
+            />
             <div>
               <span
                 style={{
@@ -216,8 +263,16 @@ const D_NavBar = ({
         </MenuBox>
       </NavMenuContainer>
       <div>
-        <MenuItem>
-          <span class="material-symbols-outlined">menu</span>
+        <MenuItem onMouseDown={handleMoreDown} onMouseUp={handleMoreUp}>
+          <span
+            style={{
+              transform: MoreScale ? "scale(0.8)" : "scale(1)",
+              transition: "transform 0.2s ease",
+            }}
+            class="material-symbols-outlined"
+          >
+            menu
+          </span>
           <div>
             <span
               style={{

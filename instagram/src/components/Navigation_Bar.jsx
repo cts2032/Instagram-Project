@@ -12,11 +12,13 @@ import Like from "../images/free-icon-like-535285.png";
 import Plus from "../images/free-icon-plus-5948495.png";
 import User from "../images/44884218_345707102882519_2446069589734326272_n.jpg";
 import Search from "../images/free-icon-search-5948534.png";
+import Explore from "../images/free-icon-compass-484136.png";
 import ClickedHome from "../images/free-icon-click-home-5948524.png";
 import ClickedReels from "../images/video_instagram_reel_social_media_brand_chatting_menu_icon_210336.png";
 import ClickedLike from "../images/free-icon-click-like-535285.png";
 import ClickedMessage from "../images/free-icon-click-direct-instagram-5883507.png";
 import ClickedPlus from "../images/free-icon-click-add-875119.png";
+import ClickedExplore from "../images/free-icon-explore-565504.png";
 const Navigation_Bar = () => {
   const theme = createTheme();
   const ScreenSize = useMediaQuery("(max-width:1264px)");
@@ -28,6 +30,7 @@ const Navigation_Bar = () => {
   const [ReelsImg, setReelsImg] = useState(Reels);
   const [PlusImg, setPlusImg] = useState(Plus);
   const [MessageImg, setMessageImg] = useState(Message);
+  const [ExploreImg, setExploreImg] = useState(Explore);
 
   const HomeClick = () => {
     setHomeImg(ClickedHome);
@@ -35,6 +38,7 @@ const Navigation_Bar = () => {
     setReelsImg(Reels);
     setPlusImg(Plus);
     setMessageImg(Message);
+    setExploreImg(Explore);
   };
   const LikeClick = () => {
     setLikeImg(ClickedLike);
@@ -42,6 +46,15 @@ const Navigation_Bar = () => {
     setReelsImg(Reels);
     setPlusImg(Plus);
     setMessageImg(Message);
+    setExploreImg(Explore);
+  };
+  const SearchClick = () => {
+    setMessageImg(Message);
+    setPlusImg(Plus);
+    setHomeImg(Home);
+    setLikeImg(Like);
+    setReelsImg(Reels);
+    setExploreImg(Explore);
   };
   const ReelsClick = () => {
     setReelsImg(ClickedReels);
@@ -49,6 +62,7 @@ const Navigation_Bar = () => {
     setLikeImg(Like);
     setPlusImg(Plus);
     setMessageImg(Message);
+    setExploreImg(Explore);
   };
   const PlusClick = () => {
     setPlusImg(ClickedPlus);
@@ -56,6 +70,7 @@ const Navigation_Bar = () => {
     setLikeImg(Like);
     setReelsImg(Reels);
     setMessageImg(Message);
+    setExploreImg(Explore);
   };
   const MessageClick = () => {
     setMessageImg(ClickedMessage);
@@ -63,6 +78,23 @@ const Navigation_Bar = () => {
     setHomeImg(Home);
     setLikeImg(Like);
     setReelsImg(Reels);
+    setExploreImg(Explore);
+  };
+  const ExploreClick = () => {
+    setMessageImg(Message);
+    setPlusImg(Plus);
+    setHomeImg(Home);
+    setLikeImg(Like);
+    setReelsImg(Reels);
+    setExploreImg(ClickedExplore);
+  };
+  const UserClick = () => {
+    setMessageImg(Message);
+    setPlusImg(Plus);
+    setHomeImg(Home);
+    setLikeImg(Like);
+    setReelsImg(Reels);
+    setExploreImg(Explore);
   };
 
   // 아이콘 클릭시 스케일 변경
@@ -71,6 +103,10 @@ const Navigation_Bar = () => {
   const [PlusScale, setPlusScale] = useState(false);
   const [MessageScale, setMessageScale] = useState(false);
   const [ReelsScale, setReelsScale] = useState(false);
+  const [ExploreScale, setExploreScale] = useState(false);
+  const [UserScale, setUserScale] = useState(false);
+  const [MoreScale, setMoreScale] = useState(false);
+  const [SearchScale, setSearchScale] = useState(false);
 
   const handleHomeDown = () => {
     setHomeScale(true);
@@ -102,6 +138,30 @@ const Navigation_Bar = () => {
   const handleReelsUp = () => {
     setReelsScale(false);
   };
+  const handleExploreDown = () => {
+    setExploreScale(true);
+  };
+  const handleExploreUp = () => {
+    setExploreScale(false);
+  };
+  const handleUserDown = () => {
+    setUserScale(true);
+  };
+  const handleUserUp = () => {
+    setUserScale(false);
+  };
+  const handleMoreDown = () => {
+    setMoreScale(true);
+  };
+  const handleMoreUp = () => {
+    setMoreScale(false);
+  };
+  const handleSearchDown = () => {
+    setSearchScale(true);
+  };
+  const handleSearchUp = () => {
+    setSearchScale(false);
+  };
   return (
     <ThemeProvider theme={theme}>
       {ScreenSize ? (
@@ -115,11 +175,13 @@ const Navigation_Bar = () => {
             LikeImg={LikeImg}
             PlusImg={PlusImg}
             MessageImg={MessageImg}
+            ExploreImg={ExploreImg}
             HomeClick={HomeClick}
             LikeClick={LikeClick}
             ReelsClick={ReelsClick}
             PlusClick={PlusClick}
             MessageClick={MessageClick}
+            ExploreClick={ExploreClick}
             HomeScale={HomeScale}
             handleHomeDown={handleHomeDown}
             handleHomeUp={handleHomeUp}
@@ -135,6 +197,15 @@ const Navigation_Bar = () => {
             ReelsScale={ReelsScale}
             handleReelsDown={handleReelsDown}
             handleReelsUp={handleReelsUp}
+            ExploreScale={ExploreScale}
+            handleExploreDown={handleExploreDown}
+            handleExploreUp={handleExploreUp}
+            UserScale={UserScale}
+            handleUserDown={handleUserDown}
+            handleUserUp={handleUserUp}
+            MoreScale={MoreScale}
+            handleMoreDown={handleMoreDown}
+            handleMoreUp={handleMoreUp}
           />
         ) : (
           <S_NavBar
@@ -146,11 +217,15 @@ const Navigation_Bar = () => {
             LikeImg={LikeImg}
             PlusImg={PlusImg}
             MessageImg={MessageImg}
+            ExploreImg={ExploreImg}
             HomeClick={HomeClick}
             LikeClick={LikeClick}
             ReelsClick={ReelsClick}
             PlusClick={PlusClick}
             MessageClick={MessageClick}
+            ExploreClick={ExploreClick}
+            SearchClick={SearchClick}
+            UserClick={UserClick}
             HomeScale={HomeScale}
             handleHomeDown={handleHomeDown}
             handleHomeUp={handleHomeUp}
@@ -166,6 +241,18 @@ const Navigation_Bar = () => {
             ReelsScale={ReelsScale}
             handleReelsDown={handleReelsDown}
             handleReelsUp={handleReelsUp}
+            ExploreScale={ExploreScale}
+            handleExploreDown={handleExploreDown}
+            handleExploreUp={handleExploreUp}
+            UserScale={UserScale}
+            handleUserDown={handleUserDown}
+            handleUserUp={handleUserUp}
+            MoreScale={MoreScale}
+            handleMoreDown={handleMoreDown}
+            handleMoreUp={handleMoreUp}
+            SearchScale={SearchScale}
+            handleSearchDown={handleSearchDown}
+            handleSearchUp={handleSearchUp}
           />
         )
       ) : (
@@ -178,12 +265,16 @@ const Navigation_Bar = () => {
           LikeImg={LikeImg}
           PlusImg={PlusImg}
           MessageImg={MessageImg}
+          ExploreImg={ExploreImg}
           setMessageImg={setMessageImg}
           HomeClick={HomeClick}
           LikeClick={LikeClick}
           ReelsClick={ReelsClick}
           PlusClick={PlusClick}
           MessageClick={MessageClick}
+          ExploreClick={ExploreClick}
+          SearchClick={SearchClick}
+          UserClick={UserClick}
           HomeScale={HomeScale}
           handleHomeDown={handleHomeDown}
           handleHomeUp={handleHomeUp}
@@ -199,6 +290,18 @@ const Navigation_Bar = () => {
           ReelsScale={ReelsScale}
           handleReelsDown={handleReelsDown}
           handleReelsUp={handleReelsUp}
+          ExploreScale={ExploreScale}
+          handleExploreDown={handleExploreDown}
+          handleExploreUp={handleExploreUp}
+          UserScale={UserScale}
+          handleUserDown={handleUserDown}
+          handleUserUp={handleUserUp}
+          MoreScale={MoreScale}
+          handleMoreDown={handleMoreDown}
+          handleMoreUp={handleMoreUp}
+          SearchScale={SearchScale}
+          handleSearchDown={handleSearchDown}
+          handleSearchUp={handleSearchUp}
         />
       )}
     </ThemeProvider>

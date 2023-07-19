@@ -17,11 +17,15 @@ const S_NavBar = ({
   LikeImg,
   PlusImg,
   MessageImg,
+  ExploreImg,
   HomeClick,
   LikeClick,
   ReelsClick,
   PlusClick,
   MessageClick,
+  ExploreClick,
+  SearchClick,
+  UserClick,
   HomeScale,
   handleHomeDown,
   handleHomeUp,
@@ -37,6 +41,18 @@ const S_NavBar = ({
   ReelsScale,
   handleReelsDown,
   handleReelsUp,
+  ExploreScale,
+  handleExploreDown,
+  handleExploreUp,
+  UserScale,
+  handleUserDown,
+  handleUserUp,
+  MoreScale,
+  handleMoreDown,
+  handleMoreUp,
+  SearchScale,
+  handleSearchDown,
+  handleSearchUp,
 }) => {
   return (
     <NavBarContainer2>
@@ -61,13 +77,33 @@ const S_NavBar = ({
               alt="홈"
             />
           </MenuItem2>
-          <MenuItem2>
-            <img src={Search} alt="검색" />
+          <MenuItem2
+            onClick={SearchClick}
+            onMouseDown={handleSearchDown}
+            onMouseUp={handleSearchUp}
+          >
+            <img
+              style={{
+                transform: SearchScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={Search}
+              alt="검색"
+            />
           </MenuItem2>
-          <MenuItem2>
-            <span style={{ scale: "1.05" }} class="material-symbols-outlined">
-              explore
-            </span>
+          <MenuItem2
+            onMouseDown={handleExploreDown}
+            onMouseUp={handleExploreUp}
+            onClick={ExploreClick}
+          >
+            <img
+              style={{
+                transform: ExploreScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={ExploreImg}
+              alt="탐색 탭"
+            />
           </MenuItem2>
           <MenuItem2
             onMouseDown={handleReelsDown}
@@ -125,14 +161,33 @@ const S_NavBar = ({
               alt="만들기"
             />
           </MenuItem2>
-          <MenuItem>
-            <img src={User} alt="프로필" />
+          <MenuItem
+            onMouseDown={handleUserDown}
+            onMouseUp={handleUserUp}
+            onClick={UserClick}
+          >
+            <img
+              style={{
+                transform: UserScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={User}
+              alt="프로필"
+            />
           </MenuItem>
         </MenuBox>
       </NavMenuContainer2>
       <div>
-        <MenuItem2>
-          <span class="material-symbols-outlined">menu</span>
+        <MenuItem2 onMouseDown={handleMoreDown} onMouseUp={handleMoreUp}>
+          <span
+            style={{
+              transform: MoreScale ? "scale(0.8)" : "scale(1)",
+              transition: "transform 0.2s ease",
+            }}
+            class="material-symbols-outlined"
+          >
+            menu
+          </span>
         </MenuItem2>
       </div>
     </NavBarContainer2>

@@ -17,11 +17,14 @@ const SP_NavBar = ({
   LikeImg,
   PlusImg,
   MessageImg,
+  ExploreImg,
   HomeClick,
   LikeClick,
   ReelsClick,
   PlusClick,
   MessageClick,
+  ExploreClick,
+  UserClick,
   HomeScale,
   handleHomeDown,
   handleHomeUp,
@@ -37,6 +40,12 @@ const SP_NavBar = ({
   ReelsScale,
   handleReelsDown,
   handleReelsUp,
+  ExploreScale,
+  handleExploreDown,
+  handleExploreUp,
+  UserScale,
+  handleUserDown,
+  handleUserUp,
 }) => {
   return (
     <NavBarContainer3>
@@ -90,10 +99,19 @@ const SP_NavBar = ({
               alt="홈"
             />
           </MenuItem3>
-          <MenuItem3>
-            <span style={{ scale: "1.05" }} class="material-symbols-outlined">
-              explore
-            </span>
+          <MenuItem3
+            onMouseDown={handleExploreDown}
+            onMouseUp={handleExploreUp}
+            onClick={ExploreClick}
+          >
+            <img
+              style={{
+                transform: ExploreScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={ExploreImg}
+              alt="탐색 탭"
+            />
           </MenuItem3>
           <MenuItem3
             onMouseDown={handleReelsDown}
@@ -137,8 +155,19 @@ const SP_NavBar = ({
               alt="만들기"
             />
           </MenuItem3>
-          <MenuItem3>
-            <img src={User} alt="프로필" />
+          <MenuItem3
+            onMouseDown={handleUserDown}
+            onMouseUp={handleUserUp}
+            onClick={UserClick}
+          >
+            <img
+              style={{
+                transform: UserScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={User}
+              alt="프로필"
+            />
           </MenuItem3>
         </MenuBox2>
       </NavMenuContainer3>
