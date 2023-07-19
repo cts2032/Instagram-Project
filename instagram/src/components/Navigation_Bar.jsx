@@ -22,6 +22,7 @@ const Navigation_Bar = () => {
   const ScreenSize = useMediaQuery("(max-width:1264px)");
   const SmartPhoneSize = useMediaQuery(theme.breakpoints.down("sm"));
 
+  // 아이콘 상태관리
   const [HomeImg, setHomeImg] = useState(ClickedHome);
   const [LikeImg, setLikeImg] = useState(Like);
   const [ReelsImg, setReelsImg] = useState(Reels);
@@ -64,6 +65,43 @@ const Navigation_Bar = () => {
     setReelsImg(Reels);
   };
 
+  // 아이콘 클릭시 스케일 변경
+  const [HomeScale, setHomeScale] = useState(false);
+  const [LikeScale, setLikeScale] = useState(false);
+  const [PlusScale, setPlusScale] = useState(false);
+  const [MessageScale, setMessageScale] = useState(false);
+  const [ReelsScale, setReelsScale] = useState(false);
+
+  const handleHomeDown = () => {
+    setHomeScale(true);
+  };
+  const handleHomeUp = () => {
+    setHomeScale(false);
+  };
+  const handleLikeDown = () => {
+    setLikeScale(true);
+  };
+  const handleLikeUp = () => {
+    setLikeScale(false);
+  };
+  const handlePlusDown = () => {
+    setPlusScale(true);
+  };
+  const handlePlusUp = () => {
+    setPlusScale(false);
+  };
+  const handleMessageDown = () => {
+    setMessageScale(true);
+  };
+  const handleMessageUp = () => {
+    setMessageScale(false);
+  };
+  const handleReelsDown = () => {
+    setReelsScale(true);
+  };
+  const handleReelsUp = () => {
+    setReelsScale(false);
+  };
   return (
     <ThemeProvider theme={theme}>
       {ScreenSize ? (
@@ -82,6 +120,21 @@ const Navigation_Bar = () => {
             ReelsClick={ReelsClick}
             PlusClick={PlusClick}
             MessageClick={MessageClick}
+            HomeScale={HomeScale}
+            handleHomeDown={handleHomeDown}
+            handleHomeUp={handleHomeUp}
+            LikeScale={LikeScale}
+            handleLikeDown={handleLikeDown}
+            handleLikeUp={handleLikeUp}
+            PlusScale={PlusScale}
+            handlePlusDown={handlePlusDown}
+            handlePlusUp={handlePlusUp}
+            MessageScale={MessageScale}
+            handleMessageDown={handleMessageDown}
+            handleMessageUp={handleMessageUp}
+            ReelsScale={ReelsScale}
+            handleReelsDown={handleReelsDown}
+            handleReelsUp={handleReelsUp}
           />
         ) : (
           <S_NavBar
@@ -98,6 +151,21 @@ const Navigation_Bar = () => {
             ReelsClick={ReelsClick}
             PlusClick={PlusClick}
             MessageClick={MessageClick}
+            HomeScale={HomeScale}
+            handleHomeDown={handleHomeDown}
+            handleHomeUp={handleHomeUp}
+            LikeScale={LikeScale}
+            handleLikeDown={handleLikeDown}
+            handleLikeUp={handleLikeUp}
+            PlusScale={PlusScale}
+            handlePlusDown={handlePlusDown}
+            handlePlusUp={handlePlusUp}
+            MessageScale={MessageScale}
+            handleMessageDown={handleMessageDown}
+            handleMessageUp={handleMessageUp}
+            ReelsScale={ReelsScale}
+            handleReelsDown={handleReelsDown}
+            handleReelsUp={handleReelsUp}
           />
         )
       ) : (
@@ -116,6 +184,21 @@ const Navigation_Bar = () => {
           ReelsClick={ReelsClick}
           PlusClick={PlusClick}
           MessageClick={MessageClick}
+          HomeScale={HomeScale}
+          handleHomeDown={handleHomeDown}
+          handleHomeUp={handleHomeUp}
+          LikeScale={LikeScale}
+          handleLikeDown={handleLikeDown}
+          handleLikeUp={handleLikeUp}
+          PlusScale={PlusScale}
+          handlePlusDown={handlePlusDown}
+          handlePlusUp={handlePlusUp}
+          MessageScale={MessageScale}
+          handleMessageDown={handleMessageDown}
+          handleMessageUp={handleMessageUp}
+          ReelsScale={ReelsScale}
+          handleReelsDown={handleReelsDown}
+          handleReelsUp={handleReelsUp}
         />
       )}
     </ThemeProvider>

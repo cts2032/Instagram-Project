@@ -22,6 +22,21 @@ const S_NavBar = ({
   ReelsClick,
   PlusClick,
   MessageClick,
+  HomeScale,
+  handleHomeDown,
+  handleHomeUp,
+  LikeScale,
+  handleLikeDown,
+  handleLikeUp,
+  PlusScale,
+  handlePlusDown,
+  handlePlusUp,
+  MessageScale,
+  handleMessageDown,
+  handleMessageUp,
+  ReelsScale,
+  handleReelsDown,
+  handleReelsUp,
 }) => {
   return (
     <NavBarContainer2>
@@ -33,7 +48,16 @@ const S_NavBar = ({
             </MenuItem2>
           </div>
           <MenuItem2 onClick={HomeClick}>
-            <img src={HomeImg} alt="홈" />
+            <img
+              onMouseDown={handleHomeDown}
+              onMouseUp={handleHomeUp}
+              style={{
+                transform: HomeScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={HomeImg}
+              alt="홈"
+            />
           </MenuItem2>
           <MenuItem2>
             <img src={Search} alt="검색" />
@@ -44,16 +68,52 @@ const S_NavBar = ({
             </span>
           </MenuItem2>
           <MenuItem2 onClick={ReelsClick}>
-            <img src={ReelsImg} alt="릴스" />
+            <img
+              onMouseDown={handleReelsDown}
+              onMouseUp={handleReelsUp}
+              style={{
+                transform: ReelsScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={ReelsImg}
+              alt="릴스"
+            />
           </MenuItem2>
           <MenuItem2 onClick={MessageClick}>
-            <img src={MessageImg} alt="메세지" />
+            <img
+              onMouseDown={handleMessageDown}
+              onMouseUp={handleMessageUp}
+              style={{
+                transform: MessageScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={MessageImg}
+              alt="메세지"
+            />
           </MenuItem2>
           <MenuItem2 onClick={LikeClick}>
-            <img src={LikeImg} alt="알림" />
+            <img
+              onMouseDown={handleLikeDown}
+              onMouseUp={handleLikeUp}
+              style={{
+                transform: LikeScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={LikeImg}
+              alt="알림"
+            />
           </MenuItem2>
           <MenuItem2 onClick={PlusClick}>
-            <img src={PlusImg} alt="만들기" />
+            <img
+              onMouseDown={handlePlusDown}
+              onMouseUp={handlePlusUp}
+              style={{
+                transform: PlusScale ? "scale(0.8)" : "scale(1)",
+                transition: "transform 0.2s ease",
+              }}
+              src={PlusImg}
+              alt="만들기"
+            />
           </MenuItem2>
           <MenuItem>
             <img src={User} alt="프로필" />
