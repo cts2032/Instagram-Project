@@ -19,6 +19,7 @@ import ClickedLike from "../images/free-icon-click-like-535285.png";
 import ClickedMessage from "../images/free-icon-click-direct-instagram-5883507.png";
 import ClickedPlus from "../images/free-icon-click-add-875119.png";
 import ClickedExplore from "../images/free-icon-explore-565504.png";
+import SearchForm from "../containers/Search/SearchForm";
 const Navigation_Bar = () => {
   const theme = createTheme();
   const ScreenSize = useMediaQuery("(max-width:1264px)");
@@ -31,6 +32,7 @@ const Navigation_Bar = () => {
   const [PlusImg, setPlusImg] = useState(Plus);
   const [MessageImg, setMessageImg] = useState(Message);
   const [ExploreImg, setExploreImg] = useState(Explore);
+  const [SearchCheck, setSearchCheck] = useState(false);
 
   const HomeClick = () => {
     setHomeImg(ClickedHome);
@@ -55,6 +57,11 @@ const Navigation_Bar = () => {
     setLikeImg(Like);
     setReelsImg(Reels);
     setExploreImg(Explore);
+    if (SearchCheck) {
+      setSearchCheck(false);
+    } else if (!SearchCheck) {
+      setSearchCheck(true);
+    }
   };
   const ReelsClick = () => {
     setReelsImg(ClickedReels);
@@ -162,11 +169,104 @@ const Navigation_Bar = () => {
   const handleSearchUp = () => {
     setSearchScale(false);
   };
+
   return (
-    <ThemeProvider theme={theme}>
-      {ScreenSize ? (
-        SmartPhoneSize ? (
-          <SP_NavBar
+    <div style={{ display: "flex" }}>
+      <ThemeProvider theme={theme}>
+        {ScreenSize ? (
+          SmartPhoneSize ? (
+            <SP_NavBar
+              Logo={Logo}
+              User={User}
+              Search={Search}
+              HomeImg={HomeImg}
+              ReelsImg={ReelsImg}
+              LikeImg={LikeImg}
+              PlusImg={PlusImg}
+              MessageImg={MessageImg}
+              ExploreImg={ExploreImg}
+              HomeClick={HomeClick}
+              LikeClick={LikeClick}
+              ReelsClick={ReelsClick}
+              PlusClick={PlusClick}
+              MessageClick={MessageClick}
+              ExploreClick={ExploreClick}
+              HomeScale={HomeScale}
+              handleHomeDown={handleHomeDown}
+              handleHomeUp={handleHomeUp}
+              LikeScale={LikeScale}
+              handleLikeDown={handleLikeDown}
+              handleLikeUp={handleLikeUp}
+              PlusScale={PlusScale}
+              handlePlusDown={handlePlusDown}
+              handlePlusUp={handlePlusUp}
+              MessageScale={MessageScale}
+              handleMessageDown={handleMessageDown}
+              handleMessageUp={handleMessageUp}
+              ReelsScale={ReelsScale}
+              handleReelsDown={handleReelsDown}
+              handleReelsUp={handleReelsUp}
+              ExploreScale={ExploreScale}
+              handleExploreDown={handleExploreDown}
+              handleExploreUp={handleExploreUp}
+              UserScale={UserScale}
+              handleUserDown={handleUserDown}
+              handleUserUp={handleUserUp}
+              MoreScale={MoreScale}
+              handleMoreDown={handleMoreDown}
+              handleMoreUp={handleMoreUp}
+            />
+          ) : (
+            <S_NavBar
+              Logo={Logo}
+              User={User}
+              Search={Search}
+              HomeImg={HomeImg}
+              ReelsImg={ReelsImg}
+              LikeImg={LikeImg}
+              PlusImg={PlusImg}
+              MessageImg={MessageImg}
+              ExploreImg={ExploreImg}
+              HomeClick={HomeClick}
+              LikeClick={LikeClick}
+              ReelsClick={ReelsClick}
+              PlusClick={PlusClick}
+              MessageClick={MessageClick}
+              ExploreClick={ExploreClick}
+              SearchClick={SearchClick}
+              UserClick={UserClick}
+              HomeScale={HomeScale}
+              handleHomeDown={handleHomeDown}
+              handleHomeUp={handleHomeUp}
+              LikeScale={LikeScale}
+              handleLikeDown={handleLikeDown}
+              handleLikeUp={handleLikeUp}
+              PlusScale={PlusScale}
+              handlePlusDown={handlePlusDown}
+              handlePlusUp={handlePlusUp}
+              MessageScale={MessageScale}
+              handleMessageDown={handleMessageDown}
+              handleMessageUp={handleMessageUp}
+              ReelsScale={ReelsScale}
+              handleReelsDown={handleReelsDown}
+              handleReelsUp={handleReelsUp}
+              ExploreScale={ExploreScale}
+              handleExploreDown={handleExploreDown}
+              handleExploreUp={handleExploreUp}
+              UserScale={UserScale}
+              handleUserDown={handleUserDown}
+              handleUserUp={handleUserUp}
+              MoreScale={MoreScale}
+              handleMoreDown={handleMoreDown}
+              handleMoreUp={handleMoreUp}
+              SearchScale={SearchScale}
+              handleSearchDown={handleSearchDown}
+              handleSearchUp={handleSearchUp}
+              SearchCheck={SearchCheck}
+            />
+          )
+        ) : !SearchCheck ? (
+          <D_NavBar
             Logo={Logo}
             User={User}
             Search={Search}
@@ -176,12 +276,15 @@ const Navigation_Bar = () => {
             PlusImg={PlusImg}
             MessageImg={MessageImg}
             ExploreImg={ExploreImg}
+            setMessageImg={setMessageImg}
             HomeClick={HomeClick}
             LikeClick={LikeClick}
             ReelsClick={ReelsClick}
             PlusClick={PlusClick}
             MessageClick={MessageClick}
             ExploreClick={ExploreClick}
+            SearchClick={SearchClick}
+            UserClick={UserClick}
             HomeScale={HomeScale}
             handleHomeDown={handleHomeDown}
             handleHomeUp={handleHomeUp}
@@ -206,6 +309,9 @@ const Navigation_Bar = () => {
             MoreScale={MoreScale}
             handleMoreDown={handleMoreDown}
             handleMoreUp={handleMoreUp}
+            SearchScale={SearchScale}
+            handleSearchDown={handleSearchDown}
+            handleSearchUp={handleSearchUp}
           />
         ) : (
           <S_NavBar
@@ -253,58 +359,12 @@ const Navigation_Bar = () => {
             SearchScale={SearchScale}
             handleSearchDown={handleSearchDown}
             handleSearchUp={handleSearchUp}
+            SearchCheck={SearchCheck}
           />
-        )
-      ) : (
-        <D_NavBar
-          Logo={Logo}
-          User={User}
-          Search={Search}
-          HomeImg={HomeImg}
-          ReelsImg={ReelsImg}
-          LikeImg={LikeImg}
-          PlusImg={PlusImg}
-          MessageImg={MessageImg}
-          ExploreImg={ExploreImg}
-          setMessageImg={setMessageImg}
-          HomeClick={HomeClick}
-          LikeClick={LikeClick}
-          ReelsClick={ReelsClick}
-          PlusClick={PlusClick}
-          MessageClick={MessageClick}
-          ExploreClick={ExploreClick}
-          SearchClick={SearchClick}
-          UserClick={UserClick}
-          HomeScale={HomeScale}
-          handleHomeDown={handleHomeDown}
-          handleHomeUp={handleHomeUp}
-          LikeScale={LikeScale}
-          handleLikeDown={handleLikeDown}
-          handleLikeUp={handleLikeUp}
-          PlusScale={PlusScale}
-          handlePlusDown={handlePlusDown}
-          handlePlusUp={handlePlusUp}
-          MessageScale={MessageScale}
-          handleMessageDown={handleMessageDown}
-          handleMessageUp={handleMessageUp}
-          ReelsScale={ReelsScale}
-          handleReelsDown={handleReelsDown}
-          handleReelsUp={handleReelsUp}
-          ExploreScale={ExploreScale}
-          handleExploreDown={handleExploreDown}
-          handleExploreUp={handleExploreUp}
-          UserScale={UserScale}
-          handleUserDown={handleUserDown}
-          handleUserUp={handleUserUp}
-          MoreScale={MoreScale}
-          handleMoreDown={handleMoreDown}
-          handleMoreUp={handleMoreUp}
-          SearchScale={SearchScale}
-          handleSearchDown={handleSearchDown}
-          handleSearchUp={handleSearchUp}
-        />
-      )}
-    </ThemeProvider>
+        )}
+        {SmartPhoneSize ? null : <SearchForm SearchCheck={SearchCheck} />}
+      </ThemeProvider>
+    </div>
   );
 };
 

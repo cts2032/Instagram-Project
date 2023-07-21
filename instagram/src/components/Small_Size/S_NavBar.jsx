@@ -53,12 +53,13 @@ const S_NavBar = ({
   SearchScale,
   handleSearchDown,
   handleSearchUp,
+  SearchCheck,
 }) => {
   return (
     <NavBarContainer2>
       <NavMenuContainer2>
         <MenuBox>
-          <div style={{ padding: "0px 0px 23px", margin: "12px 0px 0px " }}>
+          <div style={{ padding: "0px 0px 23px", margin: "17px 0px 0px " }}>
             <MenuItem2>
               <img src={SmallLogo} alt="로고" />
             </MenuItem2>
@@ -81,6 +82,7 @@ const S_NavBar = ({
             onClick={SearchClick}
             onMouseDown={handleSearchDown}
             onMouseUp={handleSearchUp}
+            style={{ border: SearchCheck ? "1px solid lightgray" : "none" }}
           >
             <img
               style={{

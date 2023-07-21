@@ -4,13 +4,15 @@ export const NavBarContainer = styled.div`
   border-right: 1px solid #dadde1;
   box-sizing: border-box;
   padding: 8px 12px 20px 12px;
-  min-width: 220px;
-  max-width: 16%;
+  min-width: 16%;
+  /* max-width: %; */
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 3;
+  background-color: white;
 `;
 
 export const LogoBox = styled.div`
@@ -62,6 +64,8 @@ export const NavBarContainer2 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 2;
+  background-color: white;
 `;
 
 export const LogoBox2 = styled.div`
