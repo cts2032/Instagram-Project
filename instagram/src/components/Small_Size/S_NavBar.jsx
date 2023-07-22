@@ -82,7 +82,11 @@ const S_NavBar = ({
             onClick={SearchClick}
             onMouseDown={handleSearchDown}
             onMouseUp={handleSearchUp}
-            style={{ border: SearchCheck ? "1px solid lightgray" : "none" }}
+            style={{
+              border: SearchCheck ? "1px solid lightgray" : "none",
+              paddingTop: SearchCheck ? "11px" : "12px",
+              paddingBottom: SearchCheck ? "11px" : "12px",
+            }}
           >
             <img
               style={{
