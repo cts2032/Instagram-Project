@@ -20,6 +20,7 @@ import ClickedMessage from "../images/free-icon-click-direct-instagram-5883507.p
 import ClickedPlus from "../images/free-icon-click-add-875119.png";
 import ClickedExplore from "../images/free-icon-explore-565504.png";
 import SearchForm from "../containers/Search/SearchForm";
+import Alaram from "../containers/Alaram/Alaram";
 const Navigation_Bar = () => {
   const theme = createTheme();
   const ScreenSize = useMediaQuery("(max-width:1264px)");
@@ -33,6 +34,7 @@ const Navigation_Bar = () => {
   const [MessageImg, setMessageImg] = useState(Message);
   const [ExploreImg, setExploreImg] = useState(Explore);
   const [SearchCheck, setSearchCheck] = useState(false);
+  const [AlaramCheck, setAlaramCheck] = useState(false);
 
   const HomeClick = () => {
     setHomeImg(ClickedHome);
@@ -49,6 +51,15 @@ const Navigation_Bar = () => {
     setPlusImg(Plus);
     setMessageImg(Message);
     setExploreImg(Explore);
+    if (AlaramCheck) {
+      setAlaramCheck(false);
+    } else if (!AlaramCheck) {
+      setAlaramCheck(true);
+    }
+    setSearchCheck(false);
+    if (LikeImg === ClickedLike) {
+      setLikeImg(Like);
+    }
   };
   const SearchClick = () => {
     setMessageImg(Message);
@@ -62,6 +73,7 @@ const Navigation_Bar = () => {
     } else if (!SearchCheck) {
       setSearchCheck(true);
     }
+    setAlaramCheck(false);
   };
   const ReelsClick = () => {
     setReelsImg(ClickedReels);
@@ -265,55 +277,7 @@ const Navigation_Bar = () => {
               SearchCheck={SearchCheck}
             />
           )
-        ) : !SearchCheck ? (
-          <D_NavBar
-            Logo={Logo}
-            User={User}
-            Search={Search}
-            HomeImg={HomeImg}
-            ReelsImg={ReelsImg}
-            LikeImg={LikeImg}
-            PlusImg={PlusImg}
-            MessageImg={MessageImg}
-            ExploreImg={ExploreImg}
-            setMessageImg={setMessageImg}
-            HomeClick={HomeClick}
-            LikeClick={LikeClick}
-            ReelsClick={ReelsClick}
-            PlusClick={PlusClick}
-            MessageClick={MessageClick}
-            ExploreClick={ExploreClick}
-            SearchClick={SearchClick}
-            UserClick={UserClick}
-            HomeScale={HomeScale}
-            handleHomeDown={handleHomeDown}
-            handleHomeUp={handleHomeUp}
-            LikeScale={LikeScale}
-            handleLikeDown={handleLikeDown}
-            handleLikeUp={handleLikeUp}
-            PlusScale={PlusScale}
-            handlePlusDown={handlePlusDown}
-            handlePlusUp={handlePlusUp}
-            MessageScale={MessageScale}
-            handleMessageDown={handleMessageDown}
-            handleMessageUp={handleMessageUp}
-            ReelsScale={ReelsScale}
-            handleReelsDown={handleReelsDown}
-            handleReelsUp={handleReelsUp}
-            ExploreScale={ExploreScale}
-            handleExploreDown={handleExploreDown}
-            handleExploreUp={handleExploreUp}
-            UserScale={UserScale}
-            handleUserDown={handleUserDown}
-            handleUserUp={handleUserUp}
-            MoreScale={MoreScale}
-            handleMoreDown={handleMoreDown}
-            handleMoreUp={handleMoreUp}
-            SearchScale={SearchScale}
-            handleSearchDown={handleSearchDown}
-            handleSearchUp={handleSearchUp}
-          />
-        ) : (
+        ) : SearchCheck || AlaramCheck ? (
           <S_NavBar
             Logo={Logo}
             User={User}
@@ -361,8 +325,57 @@ const Navigation_Bar = () => {
             handleSearchUp={handleSearchUp}
             SearchCheck={SearchCheck}
           />
+        ) : (
+          <D_NavBar
+            Logo={Logo}
+            User={User}
+            Search={Search}
+            HomeImg={HomeImg}
+            ReelsImg={ReelsImg}
+            LikeImg={LikeImg}
+            PlusImg={PlusImg}
+            MessageImg={MessageImg}
+            ExploreImg={ExploreImg}
+            setMessageImg={setMessageImg}
+            HomeClick={HomeClick}
+            LikeClick={LikeClick}
+            ReelsClick={ReelsClick}
+            PlusClick={PlusClick}
+            MessageClick={MessageClick}
+            ExploreClick={ExploreClick}
+            SearchClick={SearchClick}
+            UserClick={UserClick}
+            HomeScale={HomeScale}
+            handleHomeDown={handleHomeDown}
+            handleHomeUp={handleHomeUp}
+            LikeScale={LikeScale}
+            handleLikeDown={handleLikeDown}
+            handleLikeUp={handleLikeUp}
+            PlusScale={PlusScale}
+            handlePlusDown={handlePlusDown}
+            handlePlusUp={handlePlusUp}
+            MessageScale={MessageScale}
+            handleMessageDown={handleMessageDown}
+            handleMessageUp={handleMessageUp}
+            ReelsScale={ReelsScale}
+            handleReelsDown={handleReelsDown}
+            handleReelsUp={handleReelsUp}
+            ExploreScale={ExploreScale}
+            handleExploreDown={handleExploreDown}
+            handleExploreUp={handleExploreUp}
+            UserScale={UserScale}
+            handleUserDown={handleUserDown}
+            handleUserUp={handleUserUp}
+            MoreScale={MoreScale}
+            handleMoreDown={handleMoreDown}
+            handleMoreUp={handleMoreUp}
+            SearchScale={SearchScale}
+            handleSearchDown={handleSearchDown}
+            handleSearchUp={handleSearchUp}
+          />
         )}
         {SmartPhoneSize ? null : <SearchForm SearchCheck={SearchCheck} />}
+        {SmartPhoneSize ? null : <Alaram AlaramCheck={AlaramCheck} />}
       </ThemeProvider>
     </div>
   );
