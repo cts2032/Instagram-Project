@@ -8,6 +8,7 @@ import {
   NavBarContainer3,
   NavMenuContainer3,
 } from "../Navigation_Bar_Sty";
+import SP_EditorForm from "./SP_EditorForm";
 
 const SP_NavBar = ({
   Logo,
@@ -46,6 +47,8 @@ const SP_NavBar = ({
   UserScale,
   handleUserDown,
   handleUserUp,
+  toggleOverlay,
+  showOverlay,
 }) => {
   return (
     <NavBarContainer3>
@@ -144,7 +147,10 @@ const SP_NavBar = ({
           <MenuItem3
             onMouseDown={handlePlusDown}
             onMouseUp={handlePlusUp}
-            onClick={PlusClick}
+            onClick={() => {
+              PlusClick();
+              toggleOverlay();
+            }}
           >
             <img
               style={{
@@ -171,6 +177,9 @@ const SP_NavBar = ({
           </MenuItem3>
         </MenuBox2>
       </NavMenuContainer3>
+      {showOverlay && (
+        <SP_EditorForm toggleOverlay={toggleOverlay} PlusClick={PlusClick} />
+      )}
     </NavBarContainer3>
   );
 };

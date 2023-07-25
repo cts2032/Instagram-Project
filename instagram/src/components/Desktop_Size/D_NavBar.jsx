@@ -1,11 +1,15 @@
 import React from "react";
 import {
+  EditorBox,
+  EditorContainer,
+  EditorHeader,
   LogoBox,
   MenuBox,
   MenuItem,
   NavBarContainer,
   NavMenuContainer,
 } from "../Navigation_Bar_Sty";
+import EditorForm from "./D_EditorForm";
 
 const D_NavBar = ({
   Logo,
@@ -52,6 +56,8 @@ const D_NavBar = ({
   SearchScale,
   handleSearchDown,
   handleSearchUp,
+  toggleOverlay,
+  showOverlay,
 }) => {
   return (
     <NavBarContainer>
@@ -213,7 +219,10 @@ const D_NavBar = ({
           <MenuItem
             onMouseDown={handlePlusDown}
             onMouseUp={handlePlusUp}
-            onClick={PlusClick}
+            onClick={() => {
+              PlusClick();
+              toggleOverlay();
+            }}
           >
             <img
               style={{
@@ -286,6 +295,9 @@ const D_NavBar = ({
           </div>
         </MenuItem>
       </div>
+      {showOverlay && (
+        <EditorForm toggleOverlay={toggleOverlay} PlusClick={PlusClick} />
+      )}
     </NavBarContainer>
   );
 };

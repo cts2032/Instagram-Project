@@ -21,6 +21,7 @@ import ClickedPlus from "../images/free-icon-click-add-875119.png";
 import ClickedExplore from "../images/free-icon-explore-565504.png";
 import SearchForm from "../containers/Search/SearchForm";
 import Alaram from "../containers/Alaram/Alaram";
+import EditorForm from "./Desktop_Size/D_EditorForm";
 const Navigation_Bar = () => {
   const theme = createTheme();
   const ScreenSize = useMediaQuery("(max-width:1264px)");
@@ -90,6 +91,9 @@ const Navigation_Bar = () => {
     setReelsImg(Reels);
     setMessageImg(Message);
     setExploreImg(Explore);
+    if (PlusImg === ClickedPlus) {
+      setPlusImg(Plus);
+    }
   };
   const MessageClick = () => {
     setMessageImg(ClickedMessage);
@@ -182,6 +186,11 @@ const Navigation_Bar = () => {
     setSearchScale(false);
   };
 
+  const [showOverlay, setShowOverlay] = useState(false);
+  const toggleOverlay = () => {
+    setShowOverlay(!showOverlay);
+  };
+
   return (
     <div style={{ display: "flex" }}>
       <ThemeProvider theme={theme}>
@@ -227,6 +236,8 @@ const Navigation_Bar = () => {
               MoreScale={MoreScale}
               handleMoreDown={handleMoreDown}
               handleMoreUp={handleMoreUp}
+              toggleOverlay={toggleOverlay}
+              showOverlay={showOverlay}
             />
           ) : (
             <S_NavBar
@@ -275,6 +286,8 @@ const Navigation_Bar = () => {
               handleSearchDown={handleSearchDown}
               handleSearchUp={handleSearchUp}
               SearchCheck={SearchCheck}
+              toggleOverlay={toggleOverlay}
+              showOverlay={showOverlay}
             />
           )
         ) : SearchCheck || AlaramCheck ? (
@@ -324,6 +337,8 @@ const Navigation_Bar = () => {
             handleSearchDown={handleSearchDown}
             handleSearchUp={handleSearchUp}
             SearchCheck={SearchCheck}
+            toggleOverlay={toggleOverlay}
+            showOverlay={showOverlay}
           />
         ) : (
           <D_NavBar
@@ -372,6 +387,8 @@ const Navigation_Bar = () => {
             SearchScale={SearchScale}
             handleSearchDown={handleSearchDown}
             handleSearchUp={handleSearchUp}
+            toggleOverlay={toggleOverlay}
+            showOverlay={showOverlay}
           />
         )}
         {SmartPhoneSize ? null : <SearchForm SearchCheck={SearchCheck} />}

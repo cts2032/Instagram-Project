@@ -1,12 +1,16 @@
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
-import Navigation_Bar from "./components/Navigation_Bar";
-import Search from "./containers/Search/SearchForm";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      <Navigation_Bar />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
 

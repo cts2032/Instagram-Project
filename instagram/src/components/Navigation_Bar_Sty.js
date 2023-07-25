@@ -158,3 +158,62 @@ export const MenuBox2_1 = styled.div`
 `;
 
 export const InputBox = styled.div``;
+
+////
+
+export const EditorContainer = styled.div`
+  border: 1px solid white;
+  max-width: 710px;
+  width: 60%;
+  height: max-content;
+  background-color: white;
+  border-radius: 11px;
+`;
+
+export const EditorHeader = styled.div`
+  text-align: center;
+  font-size: 16px;
+  height: 20px;
+  border-bottom: 1px solid #cccccc;
+  padding: 11px 0px;
+  font-weight: bold;
+`;
+
+export const EditorBox = styled.div`
+  width: 100%;
+  height: 662px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  div {
+    margin: 0 auto;
+  }
+`;
+
+export const SP_EditorBox = styled.div`
+  width: 100%;
+  height: 391px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  div {
+    margin: 0 auto;
+  }
+`;
+
+export const ChoiceButton = styled.div`
+  background-color: #0095f6;
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  &:hover {
+    background-color: #3578e5;
+  }
+`;

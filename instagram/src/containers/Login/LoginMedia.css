@@ -1,0 +1,36 @@
+.total {
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  margin-top: 85px;
+  justify-content: center;
+}
+
+.footer {
+  margin: 0 auto;
+  width: 95%;
+  bottom: 0;
+  position: absolute;
+}
+
+@media only screen and (max-width: 870px) {
+  .container {
+    margin-top: 35px;
+  }
+  .phone {
+    display: none;
+  }
+  .footer {
+    position: relative;
+  }
+}
+@media only screen and (min-width: 880px) {
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-52%, -73%);
+  }
+}

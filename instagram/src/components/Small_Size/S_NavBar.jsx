@@ -8,6 +8,7 @@ import {
 } from "../Navigation_Bar_Sty";
 
 import SmallLogo from "../../images/free-icon-instagram-717392.png";
+import S_EditorForm from "./S_EditorForm";
 
 const S_NavBar = ({
   User,
@@ -54,6 +55,8 @@ const S_NavBar = ({
   handleSearchDown,
   handleSearchUp,
   SearchCheck,
+  toggleOverlay,
+  showOverlay,
 }) => {
   return (
     <NavBarContainer2>
@@ -156,7 +159,10 @@ const S_NavBar = ({
           <MenuItem2
             onMouseDown={handlePlusDown}
             onMouseUp={handlePlusUp}
-            onClick={PlusClick}
+            onClick={() => {
+              PlusClick();
+              toggleOverlay();
+            }}
           >
             <img
               style={{
@@ -196,6 +202,9 @@ const S_NavBar = ({
           </span>
         </MenuItem2>
       </div>
+      {showOverlay && (
+        <S_EditorForm toggleOverlay={toggleOverlay} PlusClick={PlusClick} />
+      )}
     </NavBarContainer2>
   );
 };
